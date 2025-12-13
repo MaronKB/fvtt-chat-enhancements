@@ -10,39 +10,33 @@ You can merge messages chatted by the same actor and display them.
 
 ### 채팅 수정 Chat edit
 
-발송한 채팅 메시지를 수정할 수 있습니다.
+발송한 채팅 메시지를 수정할 수 있습니다. 채팅 폼에서 위 방향키(↑)를 눌러 마지막으로 보낸 메시지를 불러오거나, 로그에서 메시지 우측 상단의 연필 아이콘을 클릭하여 수정할 수 있습니다.
 
-You can edit sent chat messages.
+You can edit sent chat messages. You can press the up arrow key (↑) in the chat form to retrieve the last sent message, or click the pencil icon at the top right of the message in the log to edit it.
 
 ### 액터 선택자 Actor selector
 
-토큰 없이 액터를 선택하고 그 액터로 메시지를 보낼 수 있게 합니다.
+토큰 없이 액터를 선택하고 그 액터로 메시지를 보낼 수 있게 합니다. 액터 즐겨찾키 바의 맨 왼쪽 아이콘을 클릭하여 액터 선택 창을 열 수 있습니다.
 
-You can select an actor without a token and send messages as that actor.
+You can select an actor without a token and send messages as that actor. You can open the actor selection window by clicking the leftmost icon on the actor favorites bar.
 
 ### 액터 즐겨찾기 Actor favorites
 
-채팅창 하단에 자주 찾는 액터를 모아두어, tab키 또는 마우스로 전환할 수 있습니다.
+채팅창 하단에 자주 찾는 액터를 모아두어, tab키 또는 마우스로 전환할 수 있습니다. 액터 선택 창이나 즐겨찾기에서 우클릭을 하여 추가/제거할 수 있습니다. shift + tab으로 역순 전환도 가능합니다.
 
-You can gather frequently used actors at the bottom of the chat window and switch between them using the tab key or mouse.
+You can gather frequently used actors at the bottom of the chat window and switch between them using the tab key or mouse. You can add/remove them by right-clicking in the actor selection window or favorites. You can also switch in reverse order with shift + tab.
 
 ### 채팅 포트레이트 Chat portrait
 
-로그상에 포트레이트를 출력합니다.
+로그상에 포트레이트를 출력합니다. 각 시스템과의 호환을 위해 옵션에서 사용하지 않도록 설정할 수도 있습니다.
 
-You can display portraits in the log.
+You can display portraits in the log. To ensure compatibility with each system, you can also disable it in the options.
 
-### HTML 로그 내보내기 HTML log export
+### 로그 내보내기 Chat log export
 
-HTML 형식으로 채팅을 내보냅니다.
+HTML 또는 PDF 형식으로 채팅을 내보냅니다. HTML로 내보낼 경우 스타일시트의 포함 여부를 선택할 수 있습니다.
 
-You can export chat in HTML format.
-
-### PDF 로그 내보내기 PDF log export
-
-PDF 형식으로 채팅을 내보냅니다.
-
-You can export chat in PDF format.
+You can export chats in HTML or PDF format. When exporting to HTML, you can choose whether to include the stylesheet.
 
 ### 턴 알림 Turn notification
 
@@ -62,15 +56,17 @@ Supports monologue, call, messenger, comment, tooltip, emergency disaster text, 
 
 마크다운 파싱.
 
+Markdown parsing.
+
 ### 메모 Memo
 
-특정 채팅 메시지를 지정하여 메모로 추가할 수 있습니다. 메모는 언제든 열람할 수 있습니다.
+특정 채팅 메시지를 지정하여 메모로 추가.
 
-You can specify a particular chat message and add it as a memo. Memos can be viewed at any time.
+Select a specific chat message and add it as a memo.
 
 ### 타임 요청 Pause request
 
-발언권, 또는 별도의 이유로 시간을 받아야 할 때 신호를 보낼 수 있습니다.
+발언권, 또는 별도의 이유로 시간을 받아야 할 때 신호 전송.
 
 You can send a signal when you need to take time for speaking rights or other reasons.
 
