@@ -2,6 +2,18 @@
 
 ## 포함된 기능 Included features
 
+### 채팅 합치기 Chat merge
+
+동일한 액터로 채팅한 메시지를 병합하여 표시합니다.
+
+You can merge messages chatted by the same actor and display them.
+
+### 채팅 수정 Chat edit
+
+발송한 채팅 메시지를 수정할 수 있습니다.
+
+You can edit sent chat messages.
+
 ### 액터 선택자 Actor selector
 
 토큰 없이 액터를 선택하고 그 액터로 메시지를 보낼 수 있게 합니다.
@@ -31,12 +43,6 @@ You can export chat in HTML format.
 PDF 형식으로 채팅을 내보냅니다.
 
 You can export chat in PDF format.
-
-### 채팅 합치기 Chat merge
-
-동일한 액터로 채팅한 메시지를 병합하여 표시합니다.
-
-You can merge messages chatted by the same actor and display them.
 
 ### 턴 알림 Turn notification
 
