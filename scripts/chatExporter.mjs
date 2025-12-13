@@ -54,19 +54,19 @@ export default class ChatExporter {
         urlInput.placeholder = window.location.origin;
         urlInput.id = "export-url-input";
 
-        const urlBody = document.createElement("div");
-        urlBody.append(urlHeader, urlInput);
-
-        const urlP = document.createElement("p");
-        urlP.innerHTML = "포트레이트 이미지를 별도의 서버에서 호스팅해야 하는 경우(예 : FVTT 서버를 개인 컴퓨터에서 호스트 중임), 해당 이미지서버의 주소를 입력합니다. api url에 쿼리스트링을 입력했을 때 아래의 \"이미지 다운로드\" 버튼으로 내려받은 이미지가 표시되도록 하십시오."
-
-        const url = document.createElement("div");
-        url.id = "export-url";
-        url.append(urlBody, urlP);
+        // const urlBody = document.createElement("div");
+        // urlBody.append(urlHeader, urlInput);
+        //
+        // const urlP = document.createElement("p");
+        // urlP.innerHTML = "포트레이트 이미지를 별도의 서버에서 호스팅해야 하는 경우(예 : FVTT 서버를 개인 컴퓨터에서 호스트 중임), 해당 이미지서버의 주소를 입력합니다. api url에 쿼리스트링을 입력했을 때 아래의 \"이미지 다운로드\" 버튼으로 내려받은 이미지가 표시되도록 하십시오."
+        //
+        // const url = document.createElement("div");
+        // url.id = "export-url";
+        // url.append(urlBody, urlP);
 
         const exporterForm = document.createElement("form");
         exporterForm.id = "chat-exporter";
-        exporterForm.append(types, CSS, url);
+        exporterForm.append(types, CSS/*, url*/);
 
         const exporter = new Dialog({
             title: `Chat Exporter`,
@@ -76,8 +76,8 @@ export default class ChatExporter {
                     label: "오더 플래그",
                     callback: () => {
                         const css = document.querySelector("#chat-exporter")?.css?.checked;
-                        const url = document.querySelector("#chat-exporter")?.url?.value;
-                        this.exportHTML(true, css, url)
+                        //const url = document.querySelector("#chat-exporter")?.url?.value;
+                        this.exportHTML(true, css/*, url*/)
                     }
                 },
                 timestamp: {
