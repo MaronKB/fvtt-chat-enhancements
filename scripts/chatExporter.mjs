@@ -1,3 +1,5 @@
+import {MODULE_PATH} from "./constants.mjs";
+
 export default class ChatExporter {
     static exporter() {
         const orderHeader = document.createElement("h4");
@@ -27,7 +29,6 @@ export default class ChatExporter {
         const includeCSS = document.createElement("input");
         includeCSS.type = "checkbox";
         includeCSS.name = "css";
-        includeCSS.disabled = true;
         includeCSS.id = "include-css";
 
         const CSSH3 = document.createElement("h3");
@@ -176,25 +177,51 @@ export default class ChatExporter {
     static exportHTML(order = false, css = false, url = "") {
         try {
             ChatExporter.createHTML((list, firstMessageDate, css) => {
-                const body = document.createElement("ol");
-                body.id = "chat-log";
-                body.append(...list);
+                const ol = document.createElement("ol");
+                ol.id = "chat-log";
+                ol.className = "chat-log themed " + (document.querySelector("#interface").classList.contains("theme-dark") ? "theme-dark" : "theme-light");
+                ol.append(...list);
+                const body = document.createElement("body");
+                body.append(ol);
+
+                const head = document.createElement("head");
+                const meta = document.createElement("meta");
+                meta.setAttribute("charset", "UTF-8");
+                const title = document.createElement("title");
+                title.innerHTML = `${game.world.id} 로그`;
+                head.append(meta, title);
 
                 if (css) {
-                    const link = document.createElement("link");
-                    link.type = "text/css";
-                    link.rel = "stylesheet";
-                    link.href="https://file.mrkb.kr/logs/00_logs.css";
+                    const origin = window.location.origin;
 
-                    const font = document.createElement("link");
-                    font.type = "text/css";
-                    font.rel = "stylesheet";
-                    font.href="https://mrkb.kr/font";
+                    const gameStyleLinks = document.createElement("link");
+                    gameStyleLinks.rel = "stylesheet";
+                    gameStyleLinks.href = `${origin}/css/foundry2.css`;
 
-                    body.prepend(font, link);
+                    const systemStyleLinks = game.system.styles.map(e => {
+                        const link = document.createElement("link");
+                        link.rel = "stylesheet";
+                        link.href = `${origin}/${e.src}`;
+                        return link;
+                    });
+
+                    const moduleStyleLink = document.createElement("link");
+                    moduleStyleLink.rel = "stylesheet";
+                    moduleStyleLink.href = `${origin}/${MODULE_PATH}/styles/chat.css`;
+
+                    const styles = document.createElement("style");
+                    styles.innerHTML = `
+                        body { padding: 0; }
+                        .chat-log { padding: 0; margin: 0; }
+                    `;
+                    
+                    head.append(gameStyleLinks, ...systemStyleLinks, moduleStyleLink, styles);
                 }
 
-                const plainText = body.outerHTML.replace(/\n/g, "").replace(/\s\s/g, "");
+                const html = document.createElement("html");
+                html.append(head, body);
+
+                const plainText = html.outerHTML.replace(/\n/g, "").replace(/\s\s/g, "");
 
                 const date = ChatExporter.realignTime(firstMessageDate);
                 const time = `${date.ye}${date.mo}${date.da}-${date.ho}${date.mi}${date.se}`;

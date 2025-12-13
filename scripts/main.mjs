@@ -19,7 +19,6 @@ Hooks.on("renderAbstractSidebarTab", (tab, html) => {
     }
 });
 Hooks.on("combatTurnChange", (combatData) => {
-    console.log("combatTurnChange Hook fired");
     TurnNotice.notice(combatData);
 });
 Hooks.on("preCreateChatMessage", (message, source, options, id) => ChatHandler.preProcesser(message, source, options, id));
