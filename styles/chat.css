@@ -136,7 +136,7 @@ html{
     margin: 5px 0 8px 0;
     z-index: 1;
 }
-.chat-message .message-header img {
+.chat-message .message-header .message-portrait {
     display: block;
     width: 36px;
     height: 36px;
@@ -145,7 +145,7 @@ html{
     border: 0;
     border-radius: 5px;
 }
-.chat-message .message-header .message-sender{
+.chat-message .message-header .message-sender {
     flex: 1 1 auto;
     min-width: 0;
     height: 36px;
@@ -159,6 +159,13 @@ html{
     line-height: 20px;
     margin: 0;
     overflow: hidden;
+}
+.system-dnd5e .chat-message .message-header .message-portrait {
+    display: none;
+}
+.system-dnd5e .chat-message .message-header .message-sender {
+    height: auto;
+    flex-direction: row;
 }
 .chat-message .message-header .message-sender .message-user {
     font-size: calc(var(--font-size) - 4px);
