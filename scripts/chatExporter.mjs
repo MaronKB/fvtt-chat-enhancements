@@ -214,7 +214,7 @@ export default class ChatExporter {
                 document.body.appendChild(body);
                 window.print();
                 document.body.removeChild(body);
-            });
+            }, true);
         } catch (err) {
             //debug("Exporting PDF Log", err, true);
         }
